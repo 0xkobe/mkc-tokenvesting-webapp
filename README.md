@@ -1,16 +1,9 @@
-# Decentraland Vesting Generator
+# New MKC Token Vesting Web App
 
-A dApp to deploy a [generic vesting contract](./contracts/VestingImpl.sol): A token holder contract that can release its token balance gradually like a typical vesting scheme, with a cliff and vesting period. Optionally revocable by the owner.
-
-## Use it
-
-Enter: https://vestings-deployer.vercel.app/
-
-You can fill form default values using query string parameters:
-
-```
-https://vestings-deployer.vercel.app/?token=<ADDRESS>&beneficiary=<ADDRESS>&start=<YYYY-MM-DD>&duration=<SECONDS>&cliff=<SECONDS>&revocable=no
-```
+A dApp to claim vesting tokens.
+The rate of old MKC token vs new MKC token is 10:1
+Old MKC token users in the snapshot can claim 10% of tokens once the vesting is started, and the rest 90% is linear vested through 6 months.
+Users can't claim if the vesting is stopped. It is scheduled 8 months later.
 
 ## Development
 
