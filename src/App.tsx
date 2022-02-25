@@ -1,10 +1,8 @@
 import {
   Button,
   Container,
-  Footer,
   Loader,
   Modal,
-  Segment,
   Close,
 } from 'decentraland-ui'
 import 'decentraland-ui/lib/styles.css'
@@ -21,26 +19,30 @@ const ADDRESSES: {
     IMPLEMENTATION: string
   }
 } = {
-  1: {
-    IMPLEMENTATION: '0x42f32e19365d8045661a006408cc6d1064039fbf',
+  43114: {
+    IMPLEMENTATION: '0x4BF96b80c3A1b18ff214a95e1A89D0EF61D2F48F',
   },
-  3: {
-    IMPLEMENTATION: '0xc243b243a2033348730420ea55239767802a19d0',
+  56: {
+    IMPLEMENTATION: '0x4BF96b80c3A1b18ff214a95e1A89D0EF61D2F48F',
   },
-  4: {
-    IMPLEMENTATION: '0x8493bb6ae17e12c062b0eb1fe780cc0b2df16bb2',
+  43113: {
+    IMPLEMENTATION: '0x4BF96b80c3A1b18ff214a95e1A89D0EF61D2F48F',
+  },
+  97: {
+    IMPLEMENTATION: '0x4BF96b80c3A1b18ff214a95e1A89D0EF61D2F48F',
   },
 }
 const LINKS: {
   [key: number]: string
 } = {
-  1: 'https://etherscan.io/tx/',
-  3: 'https://ropsten.etherscan.io/tx/',
-  4: 'https://rinkeby.etherscan.io/tx/'
+  43114: 'https://snowtrace.io/tx/',
+  56: 'https://bscscan.com/tx/',
+  43113: 'https://testnet.snowtrace.io/tx/',
+  97: 'https://testnet.bscscan.com/tx/'
 }
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42],
+  supportedChainIds: [43114, 56, 43113, 97],  // avax, bsc, tavax, tbsc
 })
 
 function App() {
@@ -121,16 +123,14 @@ function App() {
           </Modal.Content>
         </Modal>
         <div></div>
-        <Segment>
-          <Button
-            primary
-            id="submit"
-            onClick={sendRequest}
-          >
-            Claim
-          </Button>
-        </Segment>
-        <Footer></Footer>
+        <br /><br />
+        <Button
+          primary
+          id="submit"
+          onClick={sendRequest}
+        >
+          Claim
+        </Button>
       </div>
     </Container>
   )
